@@ -38,27 +38,87 @@ pip install -r requirements.txt
 
 ## API interface
 
-```python
+First, initialize the `IterPert` module:
 
+```python
 from iterpert.iterpert import IterPert
-strategy = 'IterPert' # choose from 'Random', 'BALD', 'BatchBALD', 'BAIT', 'ACS-FW', 'Core-Set', 'BADGE', 'LCMD', 'IterPert'
 interface = IterPert(weight_bias_track = True, 
                      exp_name = strategy,
                      device = 'cuda:0', 
                      seed = 1)
+```
 
+The arguments are:
+
+- `weight_bias_track`: True/False, if use weights and bias tracking
+- `device`: cuda device
+- `proj_name`: weights and bias project name
+- `exp_name`: weights and bias experiment name
+- `seed`: random seed in data split
+- `run`: random seed in training run
+
+Then, initialize the data:
+
+```python
 path = 'YOUR PATH'
 interface.initialize_data(path = path,
                           dataset_name='replogle_k562_essential_1000hvg',
                           batch_size = 256)
-
-interface.initialize_model(epochs = 20, hidden_size = 64)
-interface.initialize_active_learning_strategy(strategy = strategy)
-
-interface.start(n_init_labeled = 100, n_round = 5, n_query = 100)
-
 ```
+
+The arguments are:
+
+- `path`: path to save the data
+- `dataset_name`: name of the dataset
+- `batch_size`: number of cells in a batch
+- `test_fraction`: fraction of the hold out test set
+
+Then, initialize the GEARS model:
+
+```python
+interface.initialize_model(epochs = 20, hidden_size = 64)
+```
+
+The arguments are:
+
+- `epochs`: the number of training epochs
+- `hidden_size`: the number of hidden size of the model
+- `retrain`: True/False, whether to retrain the model in each round
+
+
+Then, initialize the active learning strategy:
+
+You can also choose from baselines `Random`, `BALD`, `BatchBALD`, `BAIT`, `ACS-FW`, `Core-Set`, `BADGE`, `LCMD` or specify our method `IterPert`
+
+```python
+interface.initialize_active_learning_strategy(strategy = 'IterPert')
+```
+
+Lastly, kick off the training:
+
+```python
+interface.start(n_init_labeled = 100, n_round = 5, n_query = 100)
+```
+
+The arguments are:
+
+- `n_init_labeled`: the number of initialized number of samples
+- `n_round`: the number of rounds
+- `n_query`: the number of queries per round
+
+
+
+## Demo
+
+We provide  tutorials to get started with iterative perturb-seq:
+
+| Name  | Description                                             |
+|-------|---------------------------------------------------------|
+| [Data Tutorial](demo/data_tutorial.ipynb)   | Introduce the data loader and how to use your own data |
+| [Training Tutorial](demo/train_tutorial.ipynb)   | A demo on training iterpert |
+| [Knowledge Kernel Tutorial](demo/knowledge_kernels_process.ipynb)   | A tutorial on creating knowledge kernel for your own data |
+
 
 ## Reproduce experiments
 
-Please refer to `reproduce_repo` directory to reproduce each experiment. Notably, the `README.md` contains sh files to generate all experiments. `figX.ipynb` is the notebook that produces the figures.
+Please refer to `reproduce_repo` directory to reproduce each experiment. Notably, the `README.md` contains sh files to generate all experiments. `figX.ipynb` is the notebook that produces the figures. 
