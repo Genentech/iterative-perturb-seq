@@ -8,7 +8,7 @@ Kexin Huang, Romain Lopez, Jan-Christian Hütter, Takamasa Kudo, Antonio Rios, A
 
 ### Overview
 
-<p align="center"><img src="https://raw.githubusercontent.com/Genentech/iterative-perturb-seq/master/img/illustration.png" alt="logo" width="800px" /></p>
+<p align="center"><img src="https://github.com/Genentech/iterative-perturb-seq/blob/master/img/illustration.png" alt="logo" width="800px" /></p>
 
 
 ## Installation
