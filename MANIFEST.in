@@ -1,0 +1,4 @@
+prune reproduce_repo
+prune demo
+include README.md
+include requirements.txt
