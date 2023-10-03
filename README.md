@@ -6,7 +6,7 @@ This repository hosts the code base for the paper
 Kexin Huang, Romain Lopez, Jan-Christian Hütter, Takamasa Kudo, Antonio Rios, Aviv Regev
 
 
-### Overview
+## Overview
 
 <p align="center"><img src="https://github.com/Genentech/iterative-perturb-seq/blob/master/img/illustration.png" alt="logo" width="800px" /></p>
 
@@ -36,7 +36,7 @@ cd iterative-perturb-seq
 pip install -r requirements.txt
 ```
 
-# API interface
+## API interface
 
 ```python
 
@@ -59,6 +59,6 @@ interface.start(n_init_labeled = 100, n_round = 5, n_query = 100)
 
 ```
 
-# Reproduce experiments
+## Reproduce experiments
 
 Please refer to `reproduce_repo` directory to reproduce each experiment. Notably, the `README.md` contains sh files to generate all experiments. `figX.ipynb` is the notebook that produces the figures.
