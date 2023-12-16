@@ -4,6 +4,7 @@ This repository hosts the code base for the paper
 
 **Sequential Optimal Experimental Design of Perturbation Screens Guided by Multimodal Priors**\
 Kexin Huang, Romain Lopez, Jan-Christian Hütter, Takamasa Kudo, Antonio Rios, Aviv Regev
+
 [[Paper](https://www.biorxiv.org/content/10.1101/2023.12.12.571389v1)]
 
 ## Overview
