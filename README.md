@@ -7,6 +7,8 @@ Kexin Huang, Romain Lopez, Jan-Christian Hütter, Takamasa Kudo, Antonio Rios, A
 
 [[Paper](https://www.biorxiv.org/content/10.1101/2023.12.12.571389v1)]
 
+Corresponding: lopez.romain@gene.com; regev.aviv@gene.com
+
 ## Overview
 
 <p align="center"><img src="https://github.com/Genentech/iterative-perturb-seq/blob/master/img/illustration.png" alt="logo" width="800px" /></p>
